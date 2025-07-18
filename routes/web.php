@@ -7,8 +7,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::controller(AuthController::class)->group(function() {
-    Route::get('/auth/login', 'viewLogin')->name('pages.login');
-    Route::get('/auth/register', 'viewRegister')->name('pages.register');
+    Route::get('/auth/login', 'viewLogin')->name('login');
+    Route::get('/auth/register', 'viewRegister')->name('register');
 
     Route::post('/auth/login', 'login')->name('action.login');
     Route::post('/auth/register', 'register')->name('action.register');

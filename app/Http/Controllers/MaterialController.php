@@ -38,9 +38,9 @@ class MaterialController extends Controller
                 'status' => 'required|in:IN,OUT',
                 'date' => 'required|date',
             ]);
-            
+
             Material::create($request->all());
-            return redirect()->route('material.index');
+            return redirect()->route('material.index')->with('success', 'Data material berhasil ditambah.');
         } catch(\Exception $e) {
             error_log('Error: ' . $e->getMessage());
             return redirect()->back()->with('error', 'Gagal menambahkan data material. Silakan coba lagi.');
