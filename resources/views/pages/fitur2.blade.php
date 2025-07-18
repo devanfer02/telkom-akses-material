@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Telkom Akses Dashboard</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <style>
+@extends('layouts.app')
+
+@section('content')
+<style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
@@ -53,7 +45,7 @@
       font-size: 1rem;
       padding-right: 1.25rem;
     }
-    .navbar-nav .nav-link:hover, 
+    .navbar-nav .nav-link:hover,
     .navbar-nav .nav-link:focus {
       color: #e02020;
       text-decoration: none;
@@ -152,7 +144,7 @@
       color: white;
       transition: color 0.3s ease;
     }
-    .social-icons a:hover, 
+    .social-icons a:hover,
     .social-icons a:focus {
       color: #e02020;
       text-decoration: none;
@@ -177,46 +169,6 @@
   </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#" aria-label="Logo Telkom Akses by Telkom Indonesia">
-        <img src="{{ asset('images/logoTA.png') }}" alt="Logo Telkom Akses">
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav align-items-center">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Dashboard</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Data Alat</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Profil</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-search" href="#" aria-label="Search">
-              <i class="bi bi-search"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
   <!-- Hero Section -->
   <section class="hero" aria-labelledby="hero-title">
@@ -249,4 +201,4 @@
     });
   </script>
 </body>
-</html>
+@endsection

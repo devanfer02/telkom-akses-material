@@ -9,6 +9,7 @@ Route::controller(HomeController::class)->group(function() {
 });
 
 Route::controller(PageController::class)->group(function() {
+    Route::get('/', 'home')->name('home');
     Route::get('/dashboard', 'dashboard')->name('dashboard');
     Route::get('/data-alat1', 'data_alat1')->name('data-alat1');
     Route::get('/data-alat2', 'data_alat2')->name('data-alat2');
