@@ -67,6 +67,12 @@
     }
 
 
+    .table td button {
+        padding: 5px 8px;
+        font-size: 14px;
+    }
+
+
     .btn-add {
       background-color: #c8102e;
       color: white;
@@ -101,7 +107,7 @@
   </style>
 
   <!-- Header -->
-  <div class="header-title">Data Alat Terbaru</div>
+  <div class="header-title">Data Material</div>
 
 
   <!-- Tabel -->
@@ -111,12 +117,13 @@
         <tr>
           <th>No</th>
           <th>TGL</th>
-          <th>NAMA ALAT</th>
+          <th>NAMA MATERIAL</th>
           <th>JUMLAH</th>
           <th>LOKASI</th>
           <th>MITRA</th>
           <th>TEKNISI</th>
           <th>STATUS</th>
+          <th>AKSI</th>
         </tr>
       </thead>
       <tbody>
@@ -129,6 +136,9 @@
           <td>Putratel</td>
           <td>Ayu</td>
           <td>IN</td>
+          <td>
+            <button class="btn btn-sm btn-warning me-1"><i class="fas fa-edit"></i></button>
+            <button class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></button></td>
         </tr>
         <tr>
           <td>2</td>
@@ -139,6 +149,9 @@
           <td>Indotel</td>
           <td>Putri</td>
           <td>OUT</td>
+          <td>
+            <button class="btn btn-sm btn-warning me-1"><i class="fas fa-edit"></i></button>
+            <button class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></button></td>
         </tr>
         <tr>
           <td>3</td>
@@ -149,20 +162,13 @@
           <td>Telkom</td>
           <td>Suci</td>
           <td>OUT</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>18/02/24</td>
-          <td>Fiber Optik</td>
-          <td>111</td>
-          <td>Madiun</td>
-          <td>Putratel</td>
-          <td>Ayu</td>
-          <td>OUT</td>
+          <td>
+            <button class="btn btn-sm btn-warning me-1"><i class="fas fa-edit"></i></button>
+            <button class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></button></td>
         </tr>
       </tbody>
     </table>
-    <button class="btn btn-add"><i class="fas fa-plus"></i> Tambah Alat</button>
+    <a class="btn btn-add" href="/material/tambah"><i class="fas fa-plus"></i> Tambah Alat</a>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

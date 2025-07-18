@@ -20,7 +20,7 @@
           <button class="google">Google</button>
           <button class="facebook">Facebook</button>
         </div>
-        <p class="register-link">Belum punya akun? <a href="{{ route('register') }}">Daftar di sini</a></p>
+        <p class="register-link">Belum punya akun? <a href="/auth/register">Daftar di sini</a></p>
       </form>
     </div>
   </div>

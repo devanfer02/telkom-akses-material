@@ -16,7 +16,7 @@
         <input type="password" placeholder="Password" required />
         <input type="password" placeholder="Konfirmasi Password" required />
         <button type="submit" class="daftar-btn">Daftar</button>
-        <p class="login-link">Sudah punya akun? <a href="{{ route('login') }}">Login</a></p>
+        <p class="login-link">Sudah punya akun? <a href="/auth/login">Login</a></p>
       </form>
     </div>
   </div>

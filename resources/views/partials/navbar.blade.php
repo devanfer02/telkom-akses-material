@@ -13,14 +13,23 @@
                     <a class="nav-link" href="/dashboard">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Data Alat</a>
+                    <a class="nav-link" href="/material">Data Alat</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
+                    <a class="nav-link" href="/about-us">About Us</a>
                 </li>
+                @if(auth('web')->user())
                 <li class="nav-item">
                     <a class="nav-link" href="/profile">Profil</a>
                 </li>
+                @else
+                <li class="nav-item">
+                    <a class="nav-link" href="/auth/register">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/auth/login">Login</a>
+                </li>
+                @endif
                 <li class="nav-item">
                     <a class="nav-link nav-search" href="#" aria-label="Search">
                         <i class="bi bi-search"></i>
