@@ -16,35 +16,46 @@
       <div class="col-md-6 profile-card p-4 border rounded-3">
         <div class="text-center mb-3">
           <img src="{{ asset('images/image 1.png') }}" alt="Foto Profile" class="rounded-circle">
-          <p class="fw-bold mt-2">Dolor Dolar</p>
+          <p class="fw-bold mt-2">{{ $user->name }}</p>
         </div>
+
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
 
         <!-- Tampilan Data -->
         <div id="profileData">
-          <p><strong>Nama Lengkap:</strong> <span id="profileNama">-</span></p>
-          <p><strong>Jenis Kelamin:</strong> <span id="profileGender">-</span></p>
-          <p><strong>City:</strong> <span id="profileCity">-</span></p>
-          <p><strong>Alamat Email:</strong> <span id="profileEmail">-</span></p>
+          <p><strong>Nama Lengkap:</strong> <span id="profileNama">{{ $user->name }}</span></p>
+          <p><strong>Jenis Kelamin:</strong> <span id="profileGender">{{ $user->gender === 1 ? 'Laki-Laki' : 'Wanita'  }}</span></p>
+          <p><strong>City:</strong> <span id="profileCity">{{ $user->city ?? '-' }}</span></p>
+          <p><strong>Alamat Email:</strong> <span id="profileEmail">{{ $user->email }}</span></p>
           <button class="btn btn-outline-danger w-100" onclick="editProfile()">Edit</button>
         </div>
 
         <!-- Form Edit -->
-        <form id="editForm" style="display: none;">
+        <form id="editForm" style="display: none;" method="POST" action="{{ route('profile.update') }}">
+            @csrf
+            @method('PUT')
           <div class="mb-2">
             <label>Nama Pengguna</label>
-            <input type="text" id="inputNama" class="form-control">
+            <input type="text" id="inputNama" name="name" class="form-control" value="{{ $user->name }}">
           </div>
           <div class="mb-2">
             <label>Jenis Kelamin</label>
-            <input type="text" id="inputGender" class="form-control">
+            <select id="inputGender" name="gender" class="form-control">
+                <option value="laki-laki" {{ $user->gender === 1 ? 'selected' : '' }}>Laki-Laki</option>
+                <option value="wanita" {{ $user->gender === 0 ? 'selected' : '' }}>Wanita</option>
+            </select>
           </div>
           <div class="mb-2">
             <label>City</label>
-            <input type="text" id="inputCity" class="form-control">
+            <input type="text" id="inputCity" name="city" class="form-control" value="{{ $user->city }}">
           </div>
           <div class="mb-2">
             <label>Email Address</label>
-            <input type="email" id="inputEmail" class="form-control">
+            <input type="email" id="inputEmail" name="email" class="form-control" value="{{ $user->email }}">
           </div>
           <div class="d-flex justify-content-between">
             <button type="button" class="btn btn-secondary" onclick="cancelEdit()">Kembali</button>
@@ -57,5 +68,15 @@
 </section>
 
 <!-- Custom JS -->
-<script src="{{ asset('js/script4.js') }}"></script>
+<script>
+function editProfile() {
+    document.getElementById('profileData').style.display = 'none';
+    document.getElementById('editForm').style.display = 'block';
+}
+
+function cancelEdit() {
+    document.getElementById('profileData').style.display = 'block';
+    document.getElementById('editForm').style.display = 'none';
+}
+</script>
 @endsection

@@ -22,6 +22,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/profile">Profil</a>
                 </li>
+                <li class="nav-item">
+                    <form method="POST" action="{{ route('action.logout') }}">
+                        @csrf
+                        <button type="submit" class="btn btn-link nav-link">Logout</button>
+                    </form>
+                </li>
                 @else
                 <li class="nav-item">
                     <a class="nav-link" href="/auth/register">Register</a>

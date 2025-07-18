@@ -10,11 +10,18 @@
     </div>
     <div class="right">
       <h3>Sign Up</h3>
-      <form id="registerForm">
-        <input type="text" placeholder="Nama Lengkap" required />
-        <input type="email" placeholder="Email Telkom" required />
-        <input type="password" placeholder="Password" required />
-        <input type="password" placeholder="Konfirmasi Password" required />
+      <form method="POST" action="{{ route('action.register') }}" id="regsiterForm">
+        @csrf
+        <input type="text" name="name" placeholder="Nama Lengkap" required />
+        <input type="email" name="email" placeholder="Email Telkom" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <input type="password" name="password_confirmation" placeholder="Konfirmasi Password" required />
+        <input type="text" name="city" placeholder="Masukkan Kota Asal" required />
+        <select name="gender" class="form-select" style="margin-bottom: 20px" required>
+            <option value="" disabled selected>Pilih Jenis Kelamin</option>
+            <option value="laki-laki">Laki-Laki</option>
+            <option value="wanita">Wanita</option>
+        </select>
         <button type="submit" class="daftar-btn">Daftar</button>
         <p class="login-link">Sudah punya akun? <a href="/auth/login">Login</a></p>
       </form>
