@@ -28,6 +28,12 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <style>
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.btn-link:hover {
+            color: red !important;
+        }
+    </style>
 </head>
 <body>
     @include('partials.navbar')

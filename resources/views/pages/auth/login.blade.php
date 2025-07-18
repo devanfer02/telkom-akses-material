@@ -16,11 +16,6 @@
         <input type="password" name="password" id="password" placeholder="Password" required>
         <button type="submit">Login</button>
 
-        <div class="other-login">
-          <p>Atau login dengan:</p>
-          <button class="google">Google</button>
-          <button class="facebook">Facebook</button>
-        </div>
         <p class="register-link">Belum punya akun? <a href="/auth/register">Daftar di sini</a></p>
       </form>
     </div>
