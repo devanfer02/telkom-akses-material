@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#" aria-label="Logo Telkom Akses by Telkom Indonesia">
+        <a class="navbar-brand" href="/" aria-label="Logo Telkom Akses by Telkom Indonesia">
             <img src="{{ asset('images/logoTA.png') }}" alt="Logo Telkom Akses">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav align-items-center">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Dashboard</a>
+                    <a class="nav-link" href="/dashboard">Dashboard</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Data Alat</a>
@@ -19,7 +19,7 @@
                     <a class="nav-link" href="#">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Profil</a>
+                    <a class="nav-link" href="/profile">Profil</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-search" href="#" aria-label="Search">

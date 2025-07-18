@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="id">
+@extends('layouts.app')
 
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Data Material</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+@section('content')
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
@@ -134,40 +128,6 @@
       text-align: center;
     }
   </style>
-</head>
-
-
-<body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light px-4">
-    <a class="navbar-brand" href="#">
-      <img src="{{ asset('images/logoTA.png') }}" alt="Telkom Indonesia" class="telkom-mini" />
-    </a>
-    <div class="collapse navbar-collapse">
-      <ul class="navbar-nav ms-auto align-items-center">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Dashboard</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Data Material</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Profil</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <i class="fas fa-search search-icon"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  </div>
-  </header>
-
 
   <!-- Box -->
   <div class="title-box">Data Material</div>
@@ -216,10 +176,6 @@
   </div>
 
 
-<!-- Footer -->
-  @include('partials.footer')
-
-
   <!-- Notifikasi -->
   <div class="modal fade" id="confirmModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -233,9 +189,4 @@
     </div>
   </div>
 
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-
-</html>
+@endsection

@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Camera with Timestamp Evidence Upload</title>
+@extends('layouts.app')
+
+@section('content')
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body, html {
@@ -144,8 +141,6 @@
       font-size: 0.9rem;
     }
   </style>
-</head>
-<body>
   <main class="p-4 flex flex-col items-center justify-center min-h-screen">
     <h1 class="text-3xl mb-6 font-semibold text-yellow-400 select-none">Camera Evidence with Timestamp</h1>
 
@@ -449,5 +444,4 @@
 
     init();
   </script>
-</body>
-</html>
+@endsection

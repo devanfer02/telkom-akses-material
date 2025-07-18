@@ -16,6 +16,11 @@ class PageController extends Controller
         return view('pages.dashboard');
     }
 
+    public function data_alat()
+    {
+        return view('pages.data_alat');
+    }
+
     public function data_alat1()
     {
         return view('pages.data_alat1');

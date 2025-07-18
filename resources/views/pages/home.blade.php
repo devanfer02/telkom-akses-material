@@ -432,7 +432,6 @@ p.copyright {
 }
 </style>
 
-</body>
-</html>
+
 
 @endsection

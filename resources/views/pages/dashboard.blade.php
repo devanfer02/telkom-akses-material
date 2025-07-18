@@ -564,5 +564,4 @@
     }
     </style>
       </footer>
-    </body>
 @endsection
