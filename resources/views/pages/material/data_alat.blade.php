@@ -113,13 +113,15 @@
   <!-- Tabel -->
   <div class="container table-wrapper">
     @if (session('success'))
-        <div class="alert alert-success">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
     @if (session('error'))
-        <div class="alert alert-danger">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
             {{ session('error') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
     @auth
@@ -155,6 +157,7 @@
           @auth
             @if(auth()->user()->role == 'admin')
             <td>
+                <a href="{{ route('material.show', $material->id) }}" class="btn btn-sm btn-info me-1"><i class="fas fa-eye"></i></a>
                 <a href="{{ route('material.edit', $material->id) }}" class="btn btn-sm btn-warning me-1"><i class="fas fa-edit"></i></a>
                 <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteConfirmModal" data-id="{{ $material->id }}">
                     <i class="fas fa-trash-alt"></i>
@@ -162,7 +165,7 @@
             </td>
             @else
             <td>
-                No Action Permitted
+                <a href="{{ route('material.show', $material->id) }}" class="btn btn-sm btn-info me-1"><i class="fas fa-eye"></i></a>
             </td>
             @endif
           @endauth

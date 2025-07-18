@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Material;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class MaterialController extends Controller
 {
@@ -42,9 +44,36 @@ class MaterialController extends Controller
                 'teknisi' => 'required|string|max:255',
                 'status' => 'required|in:IN,OUT',
                 'date' => 'required|date',
+                'keterangan' => 'nullable|string',
+                'evidence.*' => 'nullable|string',
             ]);
 
-            Material::create($request->all());
+            $data = $request->except('evidence');
+            $evidencePaths = [];
+
+            if ($request->has('evidence')) {
+                foreach ($request->evidence as $base64) {
+                    if (preg_match('/^data:image\/(\w+);base64,/', $base64, $type)) {
+                        $imageData = substr($base64, strpos($base64, ',') + 1);
+                        $type = strtolower($type[1]); // jpg, png, gif
+
+                        $imageData = base64_decode($imageData);
+                        if ($imageData === false) {
+                            continue;
+                        }
+
+                        $fileName = 'evidence/' . Str::random(10) . '_' . time() . '.' . $type;
+                        Storage::disk('public')->put($fileName, $imageData);
+                        $evidencePaths[] = $fileName;
+                    }
+                }
+            }
+
+            $data['evidence'] = json_encode($evidencePaths);
+            $data['keterangan'] = $request->keterangan ?? '';
+
+
+            Material::create($data);
             return redirect()->route('material.index')->with('success', 'Data material berhasil ditambah.');
         } catch(\Exception $e) {
             error_log('Error: ' . $e->getMessage());
@@ -58,7 +87,7 @@ class MaterialController extends Controller
      */
     public function show(Material $material)
     {
-        //
+        return view('pages.material.show', compact('material'));
     }
 
     /**
@@ -83,6 +112,7 @@ class MaterialController extends Controller
                 'teknisi' => 'required|string|max:255',
                 'status' => 'required|in:IN,OUT',
                 'date' => 'required|date',
+                'keterangan' => 'nullable|string',
             ]);
 
             $material->update($request->all());
@@ -98,6 +128,15 @@ class MaterialController extends Controller
     public function destroy(Material $material)
     {
         try {
+            if ($material->evidence) {
+                $evidencePaths = json_decode($material->evidence);
+
+                foreach($evidencePaths as $evidence) {
+                    Storage::disk('public')->delete($evidence);
+                }
+            }
+
+
             $material->delete();
             return redirect()->route('material.index')->with('success', 'Data material berhasil dihapus.');
         } catch (\Exception $e) {

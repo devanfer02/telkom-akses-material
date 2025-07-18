@@ -263,12 +263,8 @@ document.addEventListener('DOMContentLoaded', () => {
             alert("Silakan ambil foto terlebih dahulu.");
             return;
         }
-        // Here you would typically send the 'capturedPhotos' array to the server.
-        // For this example, we'll just log it to the console.
-        console.log("Saving photos:", capturedPhotos);
-        alert(`Menyimpan ${capturedPhotos.length} foto.`);
-        capturedPhotos = []; // Clear after "saving"
-        renderPreviews();
+        localStorage.setItem('capturedEvidence', JSON.stringify(capturedPhotos));
+        window.location.href = "{{ route('material.create') }}";
     });
 
     // Initialize

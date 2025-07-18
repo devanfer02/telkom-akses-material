@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('teknisi');
             $table->enum('status', ['IN', 'OUT']);
             $table->date('date');
+            $table->text('keterangan')->default('');
+            $table->json('evidence')->nullable();
             $table->timestamps();
         });
     }

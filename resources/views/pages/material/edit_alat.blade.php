@@ -132,15 +132,17 @@
     <!-- Box -->
     <div class="title-box">Perbaharui Data Material</div>
     <div class="form-container">
-    
+
         @if (session('success'))
-            <div class="alert alert-success">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
                 {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
         @if (session('error'))
-            <div class="alert alert-danger">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 {{ session('error') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
         <form action="{{ route('material.update', $material->id) }}" method="POST" id="editAlatForm">
@@ -207,6 +209,13 @@
                 <input type="date" class="form-control @error('date') is-invalid @enderror" name="date"
                     value="{{ old('date', $material->date) }}">
                 @error('date')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Keterangan</label>
+                <textarea class="form-control @error('keterangan') is-invalid @enderror" style="resize: none" name="keterangan" rows="5" placeholder="Masukkan keterangan (opsional)" >{{ old('keterangan') }}</textarea>
+                @error('keterangan')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>

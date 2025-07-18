@@ -19,5 +19,7 @@ class Material extends Model
         'teknisi',
         'status',
         'date',
+        'keterangan',
+        'evidence',
     ];
 }
