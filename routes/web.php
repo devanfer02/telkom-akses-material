@@ -18,6 +18,7 @@ Route::controller(AuthController::class)->group(function() {
 Route::controller(MaterialController::class)->middleware('auth')->group(function() {
     Route::get('/material', 'index')->name('material.index')->withoutMiddleware('auth');
     Route::get('/material/tambah', 'create')->name('material.create');
+    Route::get('/material/timestamp', 'timestamp')->name('material.timestamp');
     Route::post('/material', 'store')->name('material.store');
     Route::middleware('role:admin')->group(function () {
         Route::get('/material/{material}/edit', 'edit')->name('material.edit');

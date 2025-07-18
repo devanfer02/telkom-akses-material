@@ -23,6 +23,11 @@ class MaterialController extends Controller
         return view('pages.material.tambah_alat');
     }
 
+    public function timestamp()
+    {
+        return view('pages.material.timestamp');
+    }
+
     /**
      * Store a newly created resource in storage.
      */
