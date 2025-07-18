@@ -1,0 +1,136 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f2f2f2;
+}
+
+body {
+    overflow-x: hidden;
+  }
+
+.logo-img {
+  height: 40px;
+  width: auto;
+}
+
+.form-container {
+  max-width: 600px;
+  margin: 50px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.custom-navbar {
+  height: 70px;
+  background-color: #e3e3e3;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.nav-link {
+  color: #000;
+}
+
+.nav-link:hover {
+  color: #e30613;
+}
+
+.navbar-light {
+      background-color: #f8f9fa;
+      padding: 0.8rem 2rem;
+      box-shadow: 0 2px 6px rgb(0 0 0 / 0.05);
+      font-weight: 600;
+    }
+
+    .navbar-brand {
+      font-weight: 800;
+      color: #B6252A !important;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+    }
+    .navbar-brand small {
+      font-size: 0.52rem;
+      font-weight: 300;
+      color: #666;
+      display: block;
+      margin-left: 0.4rem;
+      font-family: 'Poppins', sans-serif;
+    }
+
+.form-title {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.custom-footer {
+  background-color: #FFFFFF;
+  color: #FFFFFF;
+  padding: 50px 20px 20px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-left,
+.footer-right {
+  flex: 1 1 300px;
+}
+
+.footer-left h3,
+.footer-right h3 {
+  margin-bottom: 15px;
+  margin-top: 20px;
+}
+
+.footer-left p {
+  margin-top: 10px;
+  line-height: 1.7;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  margin-left: 25px
+}
+
+.social-icons a {
+  color: white;
+  font-size: 22px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #FFFFFF;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ffffff33;
+  margin: 40px 0 20px 0;
+}
+
+p.copyright {
+  text-align: center;
+  font-size: 14px;
+  color: #ccc;
+  padding-bottom: 15px;
+}
+.custom-footer {
+  width: 100vw !important;
+  margin-left: calc(-50vw + 50%);
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.custom-footer h3, .custom-footer p {
+  color: #fff !important;
+}

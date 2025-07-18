@@ -1,0 +1,24 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fdfdfd;
+}
+
+.biodata {
+  background-image: url('https://www.transparenttextures.com/patterns/gplay.png'); /* opsional background */
+  background-size: cover;
+  background-position: center;
+}
+
+.profile-card {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+footer i {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+footer p {
+  font-size: 0.9rem;
+}
