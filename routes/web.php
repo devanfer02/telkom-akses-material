@@ -15,8 +15,11 @@ Route::controller(AuthController::class)->group(function() {
 
 Route::controller(MaterialController::class)->group(function() {
     Route::get('/material', 'index')->name('material.index');
-    Route::get('/material/tambah', 'create')->name('material.tambah');
-
+    Route::get('/material/tambah', 'create')->name('material.create');
+    Route::post('/material', 'store')->name('material.store');
+    Route::get('/material/{material}/edit', 'edit')->name('material.edit');
+    Route::put('/material/{material}', 'update')->name('material.update');
+    Route::delete('/material/{material}', 'destroy')->name('material.destroy');
 });
 
 Route::controller(PageController::class)->group(function() {

@@ -12,17 +12,9 @@ class MaterialController extends Controller
      */
     public function index()
     {
-        return view('pages.material.data_alat');
+        $materials = Material::all();
+        return view('pages.material.data_alat', compact('materials'));
     }
-
-    /**
-     * Display a listing of the resource.
-     */
-    public function adminIndex()
-    {
-        return view('pages.material.data_alat_admin');
-    }
-
     /**
      * Show the form for creating a new resource.
      */
@@ -36,7 +28,24 @@ class MaterialController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $request->validate([
+                'name' => 'required|string|max:255',
+                'quantity' => 'required|integer',
+                'location' => 'required|string|max:255',
+                'mitra' => 'required|string|max:255',
+                'teknisi' => 'required|string|max:255',
+                'status' => 'required|in:IN,OUT',
+                'date' => 'required|date',
+            ]);
+            
+            Material::create($request->all());
+            return redirect()->route('material.index');
+        } catch(\Exception $e) {
+            error_log('Error: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Gagal menambahkan data material. Silakan coba lagi.');
+        }
+
     }
 
     /**
@@ -52,7 +61,7 @@ class MaterialController extends Controller
      */
     public function edit(Material $material)
     {
-        //
+        return view('pages.material.edit_alat', compact('material'));
     }
 
     /**
@@ -60,7 +69,22 @@ class MaterialController extends Controller
      */
     public function update(Request $request, Material $material)
     {
-        //
+        try {
+            $request->validate([
+                'name' => 'required|string|max:255',
+                'quantity' => 'required|integer',
+                'location' => 'required|string|max:255',
+                'mitra' => 'required|string|max:255',
+                'teknisi' => 'required|string|max:255',
+                'status' => 'required|in:IN,OUT',
+                'date' => 'required|date',
+            ]);
+
+            $material->update($request->all());
+            return redirect()->route('material.index')->with('success', 'Data material berhasil diperbarui.');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Gagal memperbarui data material. Silakan coba lagi.')->withInput();
+        }
     }
 
     /**
@@ -68,6 +92,11 @@ class MaterialController extends Controller
      */
     public function destroy(Material $material)
     {
-        //
+        try {
+            $material->delete();
+            return redirect()->route('material.index')->with('success', 'Data material berhasil dihapus.');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Gagal menghapus data material. Silakan coba lagi.');
+        }
     }
 }

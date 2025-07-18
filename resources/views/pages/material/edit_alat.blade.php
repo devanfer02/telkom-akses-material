@@ -130,8 +130,9 @@
     </style>
 
     <!-- Box -->
-    <div class="title-box">Tambah Data Material</div>
+    <div class="title-box">Perbaharui Data Material</div>
     <div class="form-container">
+    
         @if (session('success'))
             <div class="alert alert-success">
                 {{ session('success') }}
@@ -142,12 +143,13 @@
                 {{ session('error') }}
             </div>
         @endif
-        <form action="{{ route('material.store') }}" method="POST" id="alatForm">
+        <form action="{{ route('material.update', $material->id) }}" method="POST" id="editAlatForm">
             @csrf
+            @method('PUT')
             <div class="mb-3">
                 <label class="form-label">Nama Material</label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" name="name"
-                    value="{{ old('name') }}" placeholder="Masukan Nama Material">
+                    value="{{ old('name', $material->name) }}">
                 @error('name')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -155,7 +157,7 @@
             <div class="mb-3">
                 <label class="form-label">Jumlah</label>
                 <input type="text" class="form-control @error('quantity') is-invalid @enderror" name="quantity"
-                    value="{{ old('quantity') }}" placeholder="Masukkan Jumlah Material">
+                    value="{{ old('quantity', $material->quantity) }}">
                 @error('quantity')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -163,9 +165,12 @@
             <div class="mb-3">
                 <label class="form-label">Lokasi</label>
                 <select class="form-select @error('location') is-invalid @enderror" name="location">
-                    <option selected>Madiun</option>
-                    <option>Karangjati</option>
-                    <option>Sumberejo</option>
+                    <option value="Madiun" {{ old('location', $material->location) == 'Madiun' ? 'selected' : '' }}>Madiun
+                    </option>
+                    <option value="Karangjati" {{ old('location', $material->location) == 'Karangjati' ? 'selected' : '' }}>
+                        Karangjati</option>
+                    <option value="Sumberejo" {{ old('location', $material->location) == 'Sumberejo' ? 'selected' : '' }}>
+                        Sumberejo</option>
                 </select>
                 @error('location')
                     <div class="invalid-feedback">{{ $message }}</div>
@@ -174,7 +179,7 @@
             <div class="mb-3">
                 <label class="form-label">Mitra</label>
                 <input type="text" class="form-control @error('mitra') is-invalid @enderror" name="mitra"
-                    value="{{ old('mitra') }}" placeholder="Masukkan Nama Mitra">
+                    value="{{ old('mitra', $material->mitra) }}">
                 @error('mitra')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -182,7 +187,7 @@
             <div class="mb-3">
                 <label class="form-label">Teknisi</label>
                 <input type="text" class="form-control @error('teknisi') is-invalid @enderror" name="teknisi"
-                    value="{{ old('teknisi') }}" placeholder="Masukkan Nama Teknisi">
+                    value="{{ old('teknisi', $material->teknisi) }}">
                 @error('teknisi')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -190,8 +195,8 @@
             <div class="mb-3">
                 <label class="form-label">Status Alat</label>
                 <select class="form-select @error('status') is-invalid @enderror" name="status">
-                    <option selected>IN</option>
-                    <option>OUT</option>
+                    <option value="IN" {{ old('status', $material->status) == 'IN' ? 'selected' : '' }}>IN</option>
+                    <option value="OUT" {{ old('status', $material->status) == 'OUT' ? 'selected' : '' }}>OUT</option>
                 </select>
                 @error('status')
                     <div class="invalid-feedback">{{ $message }}</div>
@@ -200,7 +205,7 @@
             <div class="mb-3">
                 <label class="form-label">Tanggal</label>
                 <input type="date" class="form-control @error('date') is-invalid @enderror" name="date"
-                    value="{{ old('date', '2024-02-18') }}">
+                    value="{{ old('date', $material->date) }}">
                 @error('date')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -213,15 +218,14 @@
         </form>
     </div>
 
-
     <!-- Notifikasi -->
     <div class="modal fade" id="confirmModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content modal-confirm">
-                <p>"Apakah Anda yakin data yang diisi sudah benar? Data tidak dapat diubah setelah disimpan."</p>
+                <p>"Apakah Anda yakin data yang diisi sudah benar?"</p>
                 <div class="d-flex justify-content-between">
                     <button class="btn btn-light" data-bs-dismiss="modal">Batal</button>
-                    <button class="btn btn-light" type="submit" form="alatForm">Simpan</button>
+                    <button class="btn btn-light" type="submit" form="editAlatForm">Simpan</button>
                 </div>
             </div>
         </div>
