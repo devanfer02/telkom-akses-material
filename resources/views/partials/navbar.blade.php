@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container-fluid">
+    <div class="container-fluid mx-4">
         <a class="navbar-brand" href="/" aria-label="Logo Telkom Akses by Telkom Indonesia">
             <img src="{{ asset('images/logoTA.png') }}" alt="Logo Telkom Akses">
         </a>
@@ -36,11 +36,11 @@
                     <a class="nav-link" href="/auth/login">Login</a>
                 </li>
                 @endif
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link nav-search" href="#" aria-label="Search">
                         <i class="bi bi-search"></i>
                     </a>
-                </li>
+                </li> --}}
             </ul>
         </div>
     </div>

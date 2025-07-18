@@ -15,11 +15,11 @@ Route::controller(AuthController::class)->group(function() {
     Route::post('/auth/logout', 'logout')->name('action.logout');
 });
 
-Route::controller(MaterialController::class)->group(function() {
-    Route::get('/material', 'index')->name('material.index');
-    Route::middleware('auth')->group(function () {
-        Route::get('/material/tambah', 'create')->name('material.create');
-        Route::post('/material', 'store')->name('material.store');
+Route::controller(MaterialController::class)->middleware('auth')->group(function() {
+    Route::get('/material', 'index')->name('material.index')->withoutMiddleware('auth');
+    Route::get('/material/tambah', 'create')->name('material.create');
+    Route::post('/material', 'store')->name('material.store');
+    Route::middleware('role:admin')->group(function () {
         Route::get('/material/{material}/edit', 'edit')->name('material.edit');
         Route::put('/material/{material}', 'update')->name('material.update');
         Route::delete('/material/{material}', 'destroy')->name('material.destroy');

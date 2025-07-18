@@ -122,7 +122,9 @@
             {{ session('error') }}
         </div>
     @endif
+    @auth
     <a href="{{ route('material.create') }}" class="btn btn-add mb-3"><i class="fas fa-plus"></i> Tambah Alat</a>
+    @endauth
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -134,7 +136,9 @@
           <th>MITRA</th>
           <th>TEKNISI</th>
           <th>STATUS</th>
+          @auth
           <th>AKSI</th>
+          @endauth
         </tr>
       </thead>
       <tbody>
@@ -148,12 +152,20 @@
           <td>{{ $material->mitra }}</td>
           <td>{{ $material->teknisi }}</td>
           <td>{{ $material->status }}</td>
-          <td>
-            <a href="{{ route('material.edit', $material->id) }}" class="btn btn-sm btn-warning me-1"><i class="fas fa-edit"></i></a>
-            <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteConfirmModal" data-id="{{ $material->id }}">
-                <i class="fas fa-trash-alt"></i>
-            </button>
-          </td>
+          @auth
+            @if(auth()->user()->role == 'admin')
+            <td>
+                <a href="{{ route('material.edit', $material->id) }}" class="btn btn-sm btn-warning me-1"><i class="fas fa-edit"></i></a>
+                <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteConfirmModal" data-id="{{ $material->id }}">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </td>
+            @else
+            <td>
+                No Action Permitted
+            </td>
+            @endif
+          @endauth
         </tr>
         @endforeach
       </tbody>
