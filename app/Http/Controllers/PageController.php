@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Material;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -13,7 +15,19 @@ class PageController extends Controller
 
     public function dashboard()
     {
-        return view('pages.dashboard');
+        $totalUser = User::count();
+        $totalMaterial = Material::count();
+        $inMaterial = Material::where('status', 'IN')->count();
+        $outMaterial = Material::where('status', 'OUT')->count();
+
+        $data = [
+            'totalUser' => $totalUser,
+            'totalMaterial' => $totalMaterial,
+            'inMaterial' => $inMaterial,
+            'outMaterial' => $outMaterial,
+        ];
+
+        return view('pages.dashboard', compact('data'));
     }
 
     public function aboutUs()
@@ -36,6 +50,6 @@ class PageController extends Controller
         return view('pages.fitur3');
     }
 
-    
+
 
 }
