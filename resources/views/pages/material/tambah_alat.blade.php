@@ -16,31 +16,37 @@
             font-size: 28px;
             font-weight: 600;
         }
+
         .form-container {
             max-width: 800px;
             margin: auto;
             background: white;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
+
         .form-label {
             font-weight: 500;
         }
+
         .form-actions {
             display: flex;
             justify-content: space-between;
             margin-top: 2rem;
         }
+
         .btn-custom {
             background-color: #c8102e;
             color: white;
             border: none;
         }
+
         .btn-custom:hover {
             background-color: #a20d23;
             color: white;
         }
+
         #evidence-preview-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -51,10 +57,19 @@
             border-radius: 5px;
             min-height: 50px;
         }
+
         .preview-image {
             width: 100%;
             height: auto;
             border-radius: 5px;
+        }
+
+        .modal-confirm {
+            background-color: #b71c1c;
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
         }
     </style>
 
@@ -77,13 +92,19 @@
             @csrf
             <div class="mb-3">
                 <label class="form-label">Nama Material</label>
-                <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Masukan Nama Material">
-                @error('name')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                <input type="text" class="form-control @error('name') is-invalid @enderror" name="name"
+                    value="{{ old('name') }}" placeholder="Masukan Nama Material">
+                @error('name')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label class="form-label">Jumlah</label>
-                <input type="number" class="form-control @error('quantity') is-invalid @enderror" name="quantity" value="{{ old('quantity') }}" placeholder="Masukkan Jumlah Material">
-                @error('quantity')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                <input type="number" class="form-control @error('quantity') is-invalid @enderror" name="quantity"
+                    value="{{ old('quantity') }}" placeholder="Masukkan Jumlah Material">
+                @error('quantity')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label class="form-label">Lokasi</label>
@@ -92,17 +113,25 @@
                     <option value="Karangjati" {{ old('location') == 'Karangjati' ? 'selected' : '' }}>Karangjati</option>
                     <option value="Sumberejo" {{ old('location') == 'Sumberejo' ? 'selected' : '' }}>Sumberejo</option>
                 </select>
-                @error('location')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                @error('location')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label class="form-label">Mitra</label>
-                <input type="text" class="form-control @error('mitra') is-invalid @enderror" name="mitra" value="{{ old('mitra') }}" placeholder="Masukkan Nama Mitra">
-                @error('mitra')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                <input type="text" class="form-control @error('mitra') is-invalid @enderror" name="mitra"
+                    value="{{ old('mitra') }}" placeholder="Masukkan Nama Mitra">
+                @error('mitra')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label class="form-label">Teknisi</label>
-                <input type="text" class="form-control @error('teknisi') is-invalid @enderror" name="teknisi" value="{{ old('teknisi') }}" placeholder="Masukkan Nama Teknisi">
-                @error('teknisi')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                <input type="text" class="form-control @error('teknisi') is-invalid @enderror" name="teknisi"
+                    value="{{ old('teknisi') }}" placeholder="Masukkan Nama Teknisi">
+                @error('teknisi')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label class="form-label">Status Alat</label>
@@ -110,17 +139,25 @@
                     <option value="IN" {{ old('status') == 'IN' ? 'selected' : '' }}>IN</option>
                     <option value="OUT" {{ old('status') == 'OUT' ? 'selected' : '' }}>OUT</option>
                 </select>
-                @error('status')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                @error('status')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label class="form-label">Tanggal</label>
-                <input type="date" class="form-control @error('date') is-invalid @enderror" name="date" value="{{ old('date', date('Y-m-d')) }}">
-                @error('date')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                <input type="date" class="form-control @error('date') is-invalid @enderror" name="date"
+                    value="{{ old('date', date('Y-m-d')) }}">
+                @error('date')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label class="form-label">Keterangan</label>
-                <textarea class="form-control @error('keterangan') is-invalid @enderror" style="resize: none" name="keterangan" rows="5" placeholder="Masukkan keterangan (opsional)" >{{ old('keterangan') }}</textarea>
-                @error('keterangan')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                <textarea class="form-control @error('keterangan') is-invalid @enderror" style="resize: none" name="keterangan"
+                    rows="5" placeholder="Masukkan keterangan (opsional)">{{ old('keterangan') }}</textarea>
+                @error('keterangan')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
 
             <div class="mb-3">
@@ -137,41 +174,55 @@
             </div>
 
             <div class="form-actions">
-                <button type="reset" class="btn btn-secondary">Batal</button>
-                <button type="submit" class="btn btn-custom">Simpan</button>
+                <a href="{{ route('material.index') }}" type="reset" class="btn btn-danger">Batal</a>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                    data-bs-target="#confirmModal">Simpan</button>
             </div>
         </form>
+
+        <!-- Notifikasi -->
+        <div class="modal fade" id="confirmModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content modal-confirm">
+                    <p>"Apakah Anda yakin data yang diisi sudah benar?"</p>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-light" data-bs-dismiss="modal">Batal</button>
+                        <button class="btn btn-light" type="submit" form="editAlatForm">Simpan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const previewContainer = document.getElementById('evidence-preview-container');
-        const hiddenInputsContainer = document.getElementById('evidence-hidden-inputs');
-        const evidenceData = localStorage.getItem('capturedEvidence');
+        document.addEventListener('DOMContentLoaded', function() {
+            const previewContainer = document.getElementById('evidence-preview-container');
+            const hiddenInputsContainer = document.getElementById('evidence-hidden-inputs');
+            const evidenceData = localStorage.getItem('capturedEvidence');
 
-        if (evidenceData) {
-            const photos = JSON.parse(evidenceData);
-            if (Array.isArray(photos) && photos.length > 0) {
-                previewContainer.innerHTML = ''; // Clear placeholder
-                photos.forEach(photoBase64 => {
-                    // Display preview image
-                    const img = document.createElement('img');
-                    img.src = photoBase64;
-                    img.className = 'preview-image';
-                    previewContainer.appendChild(img);
+            if (evidenceData) {
+                const photos = JSON.parse(evidenceData);
+                if (Array.isArray(photos) && photos.length > 0) {
+                    previewContainer.innerHTML = ''; // Clear placeholder
+                    photos.forEach(photoBase64 => {
+                        // Display preview image
+                        const img = document.createElement('img');
+                        img.src = photoBase64;
+                        img.className = 'preview-image';
+                        previewContainer.appendChild(img);
 
-                    // Create hidden input for the form
-                    const hiddenInput = document.createElement('input');
-                    hiddenInput.type = 'hidden';
-                    hiddenInput.name = 'evidence[]';
-                    hiddenInput.value = photoBase64;
-                    hiddenInputsContainer.appendChild(hiddenInput);
-                });
+                        // Create hidden input for the form
+                        const hiddenInput = document.createElement('input');
+                        hiddenInput.type = 'hidden';
+                        hiddenInput.name = 'evidence[]';
+                        hiddenInput.value = photoBase64;
+                        hiddenInputsContainer.appendChild(hiddenInput);
+                    });
 
-                // Clear localStorage after loading to prevent re-submission
-                localStorage.removeItem('capturedEvidence');
+                    // Clear localStorage after loading to prevent re-submission
+                    localStorage.removeItem('capturedEvidence');
+                }
             }
-        }
-    });
+        });
     </script>
 @endsection

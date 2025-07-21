@@ -63,7 +63,11 @@ class MaterialController extends Controller
                         }
 
                         $fileName = 'evidence/' . Str::random(10) . '_' . time() . '.' . $type;
-                        Storage::disk('public')->put($fileName, $imageData);
+                        $path = public_path('uploads/' . $fileName);
+                        //Storage::disk('public')->put($fileName, $imageData);
+
+                        file_put_contents($path, $imageData);
+
                         $evidencePaths[] = $fileName;
                     }
                 }
@@ -132,7 +136,11 @@ class MaterialController extends Controller
                 $evidencePaths = json_decode($material->evidence);
 
                 foreach($evidencePaths as $evidence) {
-                    Storage::disk('public')->delete($evidence);
+                    $filePath = public_path('uploads/' . $evidence);
+
+                    if (file_exists($filePath)) {
+                        unlink($filePath);
+                    }
                 }
             }
 

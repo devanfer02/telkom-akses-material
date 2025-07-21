@@ -291,14 +291,14 @@
         Kami hadir untuk mendukung operasional PT Telkom Akses Madiun melalui sistem pelacakan alat yang efisien, transparan, dan terintegrasi. Temukan kemudahan dalam memantau pergerakan alat, pencatatan inventaris, serta pengelolaan logistik secara real-time.
       </p>
       <div>
-        <button type="button" class="btn btn-primary me-3">Mulai</button>
-        <button type="button" class="btn btn-outline-primary">Bergabung &rarr;</button>
+        <a type="button" href="/#features" class="btn btn-primary me-3">Mulai</a>
+        <a type="button" href="/auth/register" class="btn btn-outline-primary">Bergabung &rarr;</a>
       </div>
     </div>
   </section>
 
   <!-- Features -->
-  <section class="features container" aria-labelledby="features-heading">
+  <section class="features container" aria-labelledby="features-heading" id="features">
     <h2 id="features-heading">Fitur Yang Disediakan</h2>
     <div class="row g-4">
       <article class="col-md-4">
@@ -357,7 +357,6 @@
 
 
   <hr>
-  <p class="copyright">copyright © 2025 - PT Telkom Akses Madiun.</p>
 </div>
 
 <!-- STYLE -->

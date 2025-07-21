@@ -13,7 +13,7 @@
                     <a class="nav-link" href="/dashboard">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/material">Data Alat</a>
+                    <a class="nav-link" href="/material">Data Material</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/about-us">About Us</a>

@@ -141,7 +141,7 @@
         </div>
         <div class="action-buttons">
             <button id="save-button" class="btn-main"><i class="fas fa-save"></i> Simpan</button>
-            <button id="cancel-button" class="btn-main btn-secondary"><i class="fas fa-times"></i> Batal</button>
+            <a href="{{ route('material.create') }}" id="cancel-button" class="btn-main btn-secondary"><i class="fas fa-times"></i> Batal</a>`
         </div>
     </div>
 

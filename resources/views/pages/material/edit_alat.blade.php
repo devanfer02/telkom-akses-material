@@ -220,7 +220,7 @@
                 @enderror
             </div>
             <div class="form-actions">
-                <button type="reset" class="btn btn-danger">Batal</button>
+                <a href="{{ route('material.index') }}" type="reset" class="btn btn-danger">Batal</a>
                 <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                     data-bs-target="#confirmModal">Simpan</button>
             </div>
