@@ -39,6 +39,7 @@ class MaterialController extends Controller
             $request->validate([
                 'name' => 'required|string|max:255',
                 'quantity' => 'required|integer',
+                'satuan' => 'required|in:pack,pcs,buah',
                 'location' => 'required|string|max:255',
                 'mitra' => 'required|string|max:255',
                 'teknisi' => 'required|string|max:255',
@@ -81,7 +82,7 @@ class MaterialController extends Controller
             return redirect()->route('material.index')->with('success', 'Data material berhasil ditambah.');
         } catch(\Exception $e) {
             error_log('Error: ' . $e->getMessage());
-            return redirect()->back()->with('error', 'Gagal menambahkan data material. Silakan coba lagi.');
+            return redirect()->back()->with('error', 'Gagal menambahkan data material. Silakan coba lagi.')->withInput();
         }
 
     }
@@ -111,6 +112,7 @@ class MaterialController extends Controller
             $request->validate([
                 'name' => 'required|string|max:255',
                 'quantity' => 'required|integer',
+                'satuan' => 'required|in:pack,pcs,buah',
                 'location' => 'required|string|max:255',
                 'mitra' => 'required|string|max:255',
                 'teknisi' => 'required|string|max:255',

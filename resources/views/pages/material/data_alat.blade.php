@@ -134,6 +134,7 @@
           <th>TGL</th>
           <th>NAMA MATERIAL</th>
           <th>JUMLAH</th>
+          <th>SATUAN</th>
           <th>LOKASI</th>
           <th>MITRA</th>
           <th>TEKNISI</th>
@@ -150,6 +151,7 @@
           <td>{{ $material->date }}</td>
           <td>{{ $material->name }}</td>
           <td>{{ $material->quantity }}</td>
+          <td>{{ $material->satuan }}</td>
           <td>{{ $material->location }}</td>
           <td>{{ $material->mitra }}</td>
           <td>{{ $material->teknisi }}</td>

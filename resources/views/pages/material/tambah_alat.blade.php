@@ -98,13 +98,26 @@
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
-            <div class="mb-3">
-                <label class="form-label">Jumlah</label>
-                <input type="number" class="form-control @error('quantity') is-invalid @enderror" name="quantity"
-                    value="{{ old('quantity') }}" placeholder="Masukkan Jumlah Material">
-                @error('quantity')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Jumlah</label>
+                    <input type="number" class="form-control @error('quantity') is-invalid @enderror" name="quantity"
+                        value="{{ old('quantity') }}" placeholder="Masukkan Jumlah Material">
+                    @error('quantity')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Satuan</label>
+                    <select class="form-select @error('satuan') is-invalid @enderror" name="satuan">
+                        <option value="pack" {{ old('satuan') == 'pack' ? 'selected' : '' }}>Pack</option>
+                        <option value="pcs" {{ old('satuan') == 'pcs' ? 'selected' : '' }}>Pcs</option>
+                        <option value="buah" {{ old('satuan') == 'buah' ? 'selected' : '' }}>Buah</option>
+                    </select>
+                    @error('satuan')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
             </div>
             <div class="mb-3">
                 <label class="form-label">Lokasi</label>
@@ -187,7 +200,7 @@
                     <p>"Apakah Anda yakin data yang diisi sudah benar?"</p>
                     <div class="d-flex justify-content-between">
                         <button class="btn btn-light" data-bs-dismiss="modal">Batal</button>
-                        <button class="btn btn-light" type="submit" form="editAlatForm">Simpan</button>
+                        <button class="btn btn-light" type="submit" form="alatForm">Simpan</button>
                     </div>
                 </div>
             </div>
@@ -196,33 +209,63 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('alatForm');
+            const takePhotoButton = document.querySelector('a[href="{{ route('material.timestamp') }}"]');
             const previewContainer = document.getElementById('evidence-preview-container');
             const hiddenInputsContainer = document.getElementById('evidence-hidden-inputs');
-            const evidenceData = localStorage.getItem('capturedEvidence');
 
+            // Restore form data from sessionStorage
+            const savedFormData = sessionStorage.getItem('materialFormData');
+            if (savedFormData) {
+                const data = JSON.parse(savedFormData);
+                for (const key in data) {
+                    if (data.hasOwnProperty(key) && form.elements[key]) {
+                        form.elements[key].value = data[key];
+                    }
+                }
+            }
+
+            // Restore captured evidence from localStorage
+            const evidenceData = localStorage.getItem('capturedEvidence');
             if (evidenceData) {
                 const photos = JSON.parse(evidenceData);
                 if (Array.isArray(photos) && photos.length > 0) {
                     previewContainer.innerHTML = ''; // Clear placeholder
                     photos.forEach(photoBase64 => {
-                        // Display preview image
                         const img = document.createElement('img');
                         img.src = photoBase64;
                         img.className = 'preview-image';
                         previewContainer.appendChild(img);
 
-                        // Create hidden input for the form
                         const hiddenInput = document.createElement('input');
                         hiddenInput.type = 'hidden';
                         hiddenInput.name = 'evidence[]';
                         hiddenInput.value = photoBase64;
                         hiddenInputsContainer.appendChild(hiddenInput);
                     });
-
-                    // Clear localStorage after loading to prevent re-submission
+                    // Clear localStorage after loading
                     localStorage.removeItem('capturedEvidence');
                 }
             }
+
+            // Save form data to sessionStorage before navigating to timestamp page
+            if (takePhotoButton) {
+                takePhotoButton.addEventListener('click', function(e) {
+                    const formData = new FormData(form);
+                    const formObject = {};
+                    formData.forEach((value, key) => {
+                        if (key !== '_token' && !key.startsWith('evidence')) {
+                            formObject[key] = value;
+                        }
+                    });
+                    sessionStorage.setItem('materialFormData', JSON.stringify(formObject));
+                });
+            }
+
+            // Clear sessionStorage on form submission
+            form.addEventListener('submit', function() {
+                sessionStorage.removeItem('materialFormData');
+            });
         });
     </script>
 @endsection

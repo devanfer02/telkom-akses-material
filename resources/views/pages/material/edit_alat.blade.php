@@ -156,13 +156,26 @@
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
-            <div class="mb-3">
-                <label class="form-label">Jumlah</label>
-                <input type="text" class="form-control @error('quantity') is-invalid @enderror" name="quantity"
-                    value="{{ old('quantity', $material->quantity) }}">
-                @error('quantity')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Jumlah</label>
+                    <input type="text" class="form-control @error('quantity') is-invalid @enderror" name="quantity"
+                        value="{{ old('quantity', $material->quantity) }}">
+                    @error('quantity')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Satuan</label>
+                    <select class="form-select @error('satuan') is-invalid @enderror" name="satuan">
+                        <option value="pack" {{ old('satuan', $material->satuan) == 'pack' ? 'selected' : '' }}>Pack</option>
+                        <option value="pcs" {{ old('satuan', $material->satuan) == 'pcs' ? 'selected' : '' }}>Pcs</option>
+                        <option value="buah" {{ old('satuan', $material->satuan) == 'buah' ? 'selected' : '' }}>Buah</option>
+                    </select>
+                    @error('satuan')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
             </div>
             <div class="mb-3">
                 <label class="form-label">Lokasi</label>

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('quantity');
+            $table->enum('satuan', ['pack', 'pcs', 'buah']);
             $table->string('location');
             $table->string('mitra');
             $table->string('teknisi');
