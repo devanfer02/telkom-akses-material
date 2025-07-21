@@ -124,6 +124,7 @@ class MaterialController extends Controller
             $material->update($request->all());
             return redirect()->route('material.index')->with('success', 'Data material berhasil diperbarui.');
         } catch (\Exception $e) {
+            error_log('Error: ' . $e->getMessage());
             return redirect()->back()->with('error', 'Gagal memperbarui data material. Silakan coba lagi.')->withInput();
         }
     }
@@ -150,6 +151,7 @@ class MaterialController extends Controller
             $material->delete();
             return redirect()->route('material.index')->with('success', 'Data material berhasil dihapus.');
         } catch (\Exception $e) {
+            error_log('Error: ' . $e->getMessage());
             return redirect()->back()->with('error', 'Gagal menghapus data material. Silakan coba lagi.');
         }
     }

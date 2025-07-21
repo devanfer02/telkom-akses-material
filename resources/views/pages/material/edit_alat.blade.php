@@ -227,7 +227,7 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">Keterangan</label>
-                <textarea class="form-control @error('keterangan') is-invalid @enderror" style="resize: none" name="keterangan" rows="5" placeholder="Masukkan keterangan (opsional)" >{{ old('keterangan') }}</textarea>
+                <textarea class="form-control @error('keterangan') is-invalid @enderror" style="resize: none" name="keterangan" rows="5" placeholder="Masukkan keterangan (opsional)" >{{ old('keterangan', $material->keterangan) }}</textarea>
                 @error('keterangan')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
