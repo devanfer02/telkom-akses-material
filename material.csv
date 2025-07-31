@@ -1,0 +1,229 @@
+1,AC-OF-SM-12-SC,KU FO Single Mode 12 core G652D SCPT
+2,AC-OF-SM-12C,KU FO Single Mode 12 core G655C
+3,AC-OF-SM-12D,KU FO Single Mode 12 core G652D
+4,AC-OF-SM-1B,DC FO aerial 1 Core Single mode G657
+5,AC-OF-SM-24-SC,KU FO Single Mode 24 core G652D SCPT
+6,AC-OF-SM-24C,KU FO Single Mode 24 core G655C
+7,AC-OF-SM-24D,KU FO Single Mode 24 core G652D
+8,AC-OF-SM-24D-MTEL,KU FO SM 24 core G652D Marking Mitratel
+9,AC-OF-SM-48C,KU FO Single Mode 48 core G655C
+10,AC-OF-SM-48D,KU FO Single Mode 48 core G652D
+11,AC-OF-SM-96D,KU FO Single Mode 96 core G652D
+12,AC-OF-SM-ADSS-12D,KU FO SM ADSS 12 C G652D Marking Telkom
+13,AC-OF-SM-ADSS-24D,KU FO SM ADSS 24 C G652D Marking Telkom
+14,AD-LC,Adaptor LC
+15,AD-SC,Adaptor SC
+16,AD-SC-ALLOY-DC,Adaptor SC for OTB Metal Alloy degan dus
+17,AD-SC-SOLID,AD-SC-Solid
+18,AN-TIANG-4,Anchoring 4 Lubang / baut
+19,BDG-38,Buldogrip 3/8
+20,BLUE-WIRE_CONN,Blue Wire Connector
+21,BREKET-A,Breket A
+22,CASSET-ODP-CA-8,CASSET-ODP-CA-8
+23,CB-FC-8-17,Core Bundle FC kap 8 fiber panjang 17 m
+24,CB-LC-8-15,Core Bundle LC kap 8 fiber panjang 15 m
+25,CB-LC-8-30,Core Bundle LC kap 8 fiber panjang 30 m
+26,CB-LC-8-50,Core Bundle LC kap 8 fiber panjang 50 m
+27,CB-LC-8-60,Core Bundle LC kap 8 fiber panjang 60 m
+28,CB-SC-8-10,Core Bundle SC kap 8 fiber panjang 10 m
+29,CB-SC-8-20,Core Bundle SC kap 8 fiber panjang 20 m
+30,CB-SC-8-25,Core Bundle SC kap 8 fiber panjang 25 m
+31,CB-SC-8-30,Core Bundle SC kap 8 fiber panjang 30 m
+32,CB-SC-8-35,Core Bundle SC kap 8 fiber panjang 35 m
+33,CB-SC-8-40,Core Bundle SC kap 8 fiber panjang 40 m
+34,CB-SC-8-50,Core Bundle SC kap 8 fiber panjang 50 m
+35,CB-SC-8-70,Core Bundle SC kap 8 fiber panjang 70 m
+36,CL-RK-12U,Close rack 12U
+37,CL-RK-6U,Close rack 6U
+38,CLAMP-HOOK,Clamp-Hook
+39,DC-OF-SM-12-SC,KD FO Single Mode 12 core G 652D SCPT
+40,DC-OF-SM-12D,KD FO Single Mode 12 core G 652D
+41,DC-OF-SM-144D,KD FO Single Mode 144 core G652D
+42,DC-OF-SM-24-SC,KD FO Single Mode 24 core G652D SCPT
+43,DC-OF-SM-24D,KD FO Single Mode 24 core G652D
+44,DC-OF-SM-288D,KD FO Single Mode 288 core G652D
+45,DC-OF-SM-48C,KD FO Single Mode 48 core G655C
+46,DC-OF-SM-48D,KD FO Single Mode 48 core G652D
+47,DC-OF-SM-96D,KD FO Single Mode 96 core G652D
+48,DC-SD-32/28-HB,Subduct 32/28 mm Hitam List Biru
+49,DC-SD-40/33-HB,Subduct 40/33 mm Hitam List Biru
+50,DC-SD-50/42-HB,Subduct 50/42 mm Hitam List Biru
+51,DD-HDPE-1-32/27,HDPE 32/27- Orange
+52,DD-HDPE-1-50/42-OR,HDPE 50/42 (DLT-III)OR
+53,DD-HDPE-40/33,HDPE 40/33 - Orange
+54,DEAD-END-CLAMP,Dead End Clamp
+55,DP-F-10,DP Fiber kap 10 Pair
+56,DP-WM-10,DP Dinding 10 pair LSA HighBand Plus
+57,DROP-WIRE-TEMBAGA,Drop Wire Tembaga
+58,FLEX-INNERDUCT-3,Fabric Innerduct dia 28mm 3 polongan
+59,FTB-SM-144SA,ODF Expandable Kap 144 - 1000
+60,FTM-CONNECTOR-44,Connector (4x4)
+61,FTM-CR-19,CloseRack 19' w Fibre Mgt 7x144 core/42U
+62,FTM-EXIT-4,4 express exit
+63,FTM-PC-COVER,Jalur patchcord 4x12 Lengkap Cover
+64,FTM-TF,Trumpet Flare dan Kit (4x4)
+65,FTM-VR-90-COVER,Vertical raise 90 dan cover (4x4)
+66,GC-NYAF-16,Kabel Grounding NYAF 16 mm
+67,HELICAL-GRIP-LKP,Helical Performed Grip Lengkap
+68,HH-PIT-P-HA,HH Pit Portable Home Access +Accessories
+69,HH-PIT-P-ODC,HH Pit Portable ODC beserta aksesorisnya
+70,HH-PIT-P-ODP,HH Pit Portable ODP beserta aksesorisnya
+71,IC-LF,Indoor Cable Low Friction
+72,JUMPER WIRE-BP,jumper wire biru putih
+73,JUMPER WIRE-MP,jumper wire merah putih
+74,KLEM-COOCKER,KLEM-COOCKER
+75,KLEM-KUPING,Klem Kuping
+76,KLEM-RING-5-LUBANG,Klem Ring 5 Lubang
+77,KLEM-SPIRAL,Klem Spiral
+78,KTTL-80,Kabel Tembaga Tanam Langsung 80x2x0.60
+79,NYM-2-1.5MM,"Kabel Listrik NYM 2*1,5 mm"
+80,NYM-3-2.5MM,"Kabel Listrik NYM 3*2,5 mm"
+81,NYY-3-2.5MM,"Kabel Listrik NYY 3*2,5 mm"
+82,ODC-C-144,ODC-C (Outdoor) kap 144 core
+83,ODC-C-288,ODC-C (Outdoor) kap 288 core
+84,ODC-C-48,ODC-C (Outdoor) kap 48 core
+85,ODP-CA-16,ODP type Clousure Aerial Kap 16 core
+86,ODP-CA-8,ODP type Clousure Aerial Kap 8 core
+87,ODP-PB-12,ODP ( Pole/Building ) kap 12 core
+88,ODP-PB-16,ODP ( Pole/Building ) kap 16 core
+89,ODP-PB-24,ODP ( Pole/Building ) kap 24 core
+90,ODP-PB-8,ODP ( Pole/Building ) kap 8 core
+91,ODP-PD-16,ODP Pedestal Kap 16 Core Termasuk Pigtal
+92,ODP-PD-8,ODP Pedestal 8 Core
+93,ODP-SOLID-16-L,ODP-Solid-16-LKP
+94,ODP-SOLID-8-L,ODP-Solid-8-LKP
+95,OTP-FTTH-1,OTP FTTH 1 Port With Adaptor
+96,PC-FC-FC-10,Patchcord FC-FC 10 M
+97,PC-FC-FC-15,Patchcord FC-FC 15 M
+98,PC-FC-FC-2,Patchcord FC-FC 2 M
+99,PC-FC-FC-20,Patchcord FC-FC 20 M Simplex
+100,PC-FC-FC-3,Patchcord FC-FC 3 M
+101,PC-FC-FC-30,Patchcord FC-FC 30 M
+102,PC-FC-FC-5,Patchcord FC-FC 5 M
+103,PC-FC-FC-50,Patchcord FC-FC 50 M
+104,PC-FC-LC-10,Patchcord FC-LC 10 M
+105,PC-FC-LC-15,Patchcord FC-LC 15 M
+106,PC-FC-LC-20,Patchcord FC-LC 20 M
+107,PC-FC-LC-3,Patchcord FC-LC 3 M
+108,PC-FC-LC-30,Patchcord FC-LC 30 M
+109,PC-FC-LC-5,Patchcord FC-LC 5 M
+110,PC-FC-SC-10,Patchcord FC-SC 10 M
+111,PC-FC-SC-15,Patchcord FC-SC 15 M
+112,PC-FC-SC-2,Patchcord FC-SC 2 M
+113,PC-FC-SC-20,Patchcord FC-SC 20 M
+114,PC-FC-SC-30,Patchcord FC-SC 30 M
+115,PC-FC-SC-5,Patchcord FC-SC 5 M
+116,PC-FC-SC-50,Patchcord FC-SC 50 M
+117,PC-LC-LC-1,Patchcord LC-LC 1 M
+118,PC-LC-LC-10,Patchcord LC-LC 10 M
+119,PC-LC-LC-15,Patchcord LC-LC 15 M
+120,PC-LC-LC-20,Patchcord LC-LC 20 M
+121,PC-LC-LC-30,Patchcord LC-LC 30 M
+122,PC-LC-LC-5,Patchcord LC-LC 5 M
+123,PC-LC-LC-50,Patchcord LC LC 50 M
+124,PC-SC-2-BI,Patchcord 2 m (SC/APC to SC/UPC)
+125,PC-SC-5-BI,Patchcord 5 M (SC/APC To SC/UPC)
+126,PC-SC-LC-1,Patchcord SC-LC 1 M
+127,PC-SC-LC-10,Patchcord SC-LC 10 M
+128,PC-SC-LC-15,Patchcord SC-LC 15 M
+129,PC-SC-LC-2,Patchcord SC-LC 2 M
+130,PC-SC-LC-20,Patchcord SC-LC 20 M Simplex
+131,PC-SC-LC-3,Patchcord SC-LC 3 M
+132,PC-SC-LC-30,Patchcord SC-LC 30 M
+133,PC-SC-LC-5,Patchcord SC-LC 5 M
+134,PC-SC-LC-50,Patchcord SC-LC 50 M
+135,PC-SC-SC-10,Patchcord SC-SC 10 M
+136,PC-SC-SC-15,Patchcord SC-SC 15 M
+137,PC-SC-SC-2,Patchcord SC-SC 2 M
+138,PC-SC-SC-20,Patchcord SC-SC 20 M
+139,PC-SC-SC-3,Patchcord SC-SC 3 M
+140,PC-SC-SC-30,Patchcord SC-SC 30 M
+141,PC-SC-SC-5,Patchcord SC-SC 5 M
+142,PIGTAIL-FC,Pigtail FC
+143,PIGTAIL-SC,Pigtail SC
+144,PRECON-1C-100-NOAC,Precon 1 core 100 Mtr Tanpa Accessories
+145,PRECON-1C-150-NOAC,Precon 1 core 150 Mtr Tanpa Accessories
+146,PRECON-1C-35,Preconnectorized 1 core paket 35 Mtr
+147,PRECON-1C-40-NOAC,Precon 1 core 40 M Tanpa Accessories
+148,PRECON-1C-60-NOAC,Precon 1 core 60 M Tanpa Accessories
+149,PREKSO-INTRA-15-RS,Precon KSO Indoor Trans 15 mtr dgn Roset
+150,PREKSO-INTRA-20-RS,Precon KSO Indoor Trans 20 mtr dgn Roset
+151,PREKSO-INTRA-40-RS,Precon KSO Indoor Trans 40 mtr dgn Roset
+152,PROT-SLEEVE-TIPE3,Protection Sleeve Tipe 3
+153,PROTECTION-SLEEVE,Protection Sleeve
+154,PS-1-16-ODP-PB,PS-1-16-ODP-PB
+155,PS-1-2-ODP-PB,PS-1-2-ODP-PB
+156,PS-1-4,"PS-1-4 Pan-Out,for ODC/ODP"
+157,PS-1-4-ODC-144,PS-1-4-ODC-144
+158,PS-1-4-ODC-288,PS-1-4-ODC-288
+159,PS-1-8,"PS-1-8 Pan-Out,for ODC/ODP"
+160,PS-1-8-ODP-CA,PS-1-8-ODP-CA
+161,PS-1-8-ODP-PB/PD,PS-1-8-ODP-PB/PD
+162,PS-1-8-SOLID,PS-1-8-Solid
+163,PS-1-8-SOLID-L,PS-1-8-Solid-LKP
+164,PS-2-4-ODC-144,"Passive Splitter 2:4, Pan-Out, for ODC 1"
+165,PS-2-4-ODC-288,"Passive Splitter 2:4, Pan-Out, for ODC 2"
+166,PS-TIANG,Aksesories Tiang Pullstrap WWL
+167,PU-G6.0-35KG,Tiang Galvanis 6M Tanpa Sambungan
+168,PU-S7.0-140,Tiang Besi 7 Mtr
+169,PU-S7.0-400NM,Tiang Besi 7 Meter Dengan 2 Segmen
+170,PU-S9.0-140,Tiang Besi 9 Mtr
+171,RJ45-5,RJ 45 Cat 5
+172,RJ45-6,RJ 45 Cat 6
+173,RP-GM-1.50,Riser Pipa 1.50 Galvanis
+174,RP-GM-2,Riser Pipa 2.00 Galvanis
+175,RS-IN-SC-1,RoSET with SC Adaptor 1 core exc pigtail
+176,S-CLAMP-SPRINER,S-Clamp-Springer
+177,SC-OF-SM-12,Alat Sambung untuk FO kap s.d 12 core
+178,SC-OF-SM-144,Alat Sambung untuk FO kap s.d 144 core
+179,SC-OF-SM-24,Alat Sambung untuk FO kap s.d 24 core
+180,SC-OF-SM-288,Alat Sambung untuk FO kap s.d 288 core
+181,SC-OF-SM-48,Alat Sambung untuk FO kap s.d 48 core
+182,SC-OF-SM-96,Alat Sambung untuk FO kap s.d 96 core
+183,SCREEN-4,Kabel Screen 4 urat
+184,SLACK-S,Supporting Slack
+185,SOC-FUJ,Connector of fiber instrument (Fujikura)
+186,SOC-ILS,Splice on Connector Ilsintech
+187,SOC-SUM,Splice on Connector Sumitomo
+188,SPW-38,Span Wartel 3/8 Lengkap
+189,SPW-58,Span Wartel 5/8 Lengkap
+190,SS-TIANG-CAPIT,Suspension Capit
+191,SS-TIANG-CLAMP,Suspension Clamp (Corong)
+192,SS-TIANG-FO,Suspension FO
+193,STAINLESS-BELT,Stainless Belt Lengkap
+194,TC-2-160,"Tray Cable TC-2, Lebar 160 mm"
+195,TC-OF-CR-200,"Tray Cable, Lebar 200 mm tebal 5 mm"
+196,TC-SM-12,ODF/OTB FO Single Mode Kap 12 Core
+197,TC-SM-24,ODF/OTB FO Single Mode Kap 24 Core
+198,TC-SM-24-FC,ODF/OTB FO SM Kap 24 Core Adaptor FC
+199,TC-SM-288F,ODF/OTB FO Single Mode Kap 288 Core
+200,TC-SM-48,ODF/OTB FO Single Mode Kap 48 Core
+201,TC-SM-96,ODF/OTB FO Single Mode Kap 96 Core
+202,TC-SM-96F,ODF/OTB FO Single Mode 96 Core + pigtail
+203,TC-SM-OTP-1,Optical Termination Premises Kap 1 core
+204,TRAY-MESH-2,
+205,TRAY-MESH-3,Wiremesh cabletray 30x10 cm + supporting
+206,UC-3-5,Alat sambung Kabel tembaga UC-3-5
+207,UC-4-6,Alat sambung Kabel tembaga UC-4-6
+208,UTP-C5,Kabel UTP Cat 5 (Kec <20 Mbps)
+209,UTP-C5E,Kabel UTP Cat 5 type E
+210,UTP-C6,Kabel UTP Cat 6 (Kec <100 Mbps)
+211,VSS-90-2,VSS 2m (kit instalasi tiap 90cm)
+212,AC-OF-ADSS-100-24C,KU Fiber Optik ADSS Span 100 24 core
+213,ODP-24-PORT-TBG,ODP Kap 24 Core Dgn Pigtail 24 Pcs TBG
+214,CL-DOME-24-TBG,Closure Dome Kap s.d 24 Core TBG
+215,PC-SC-SC-60-TBG,Patchcord SC-SC 60 Mtr DX TBG
+216,PC-SC-LC-60-TBG,Patchcord SC-LC 60 Mtr DX TBG
+217,PC-SC-LC-60-AR-TBG,Patchcord SC-LC 60 Mtr Armoured DX TBG
+218,PC-SC-SC-60-AR-TBG,Patchcord SC-SC 60 Mtr Armoured DX TBG
+220,PU-S9-2S-D4-MREP,Tiang Besi 9M 3 Segmen D 4 Inch MyRep
+221,AC-ADSS-24D-MREP,KU FO ADSS 24 C G652D Marking Myrep
+222,PU-S7-2S-D3-MREP,Tiang Besi 7M 2 Segmen D 3 Inch MyRep
+223,PU-S7-3S-D4-MREP,Tiang Besi 7M 3 Segmen D 4 Inch MyRep
+224,AC-ADSS-48D-MREP,KU FO ADSS 48 C G652D Marking Myrep
+225,AC-ADSS-36D-MREP,KU FO ADSS 36 C G652D Marking Myrep
+226,AC-OF-SM-1-3SL,
+227,FAT-16-PORT-MYREP,FAT Kap 16 Port Dgn PS 1:8 1 Pcs Myrep
+228,PC-SC-LC-2,
+229,AC-OF-SM-ADSS-96D,
+230,UTP-RJ45-C6-1,

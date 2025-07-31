@@ -22,26 +22,26 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $credentials = $request->validate([
-            'email' => ['required', 'email'],
+            'no_hp' => ['required', 'string', 'regex:/^(\+62|0)[0-9]{5,}$/'],
             'password' => ['required'],
         ]);
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt(['no_hp' => $credentials['no_hp'], 'password' => $credentials['password']])) {
             $request->session()->regenerate();
 
             return redirect()->intended('dashboard');
         }
 
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ])->onlyInput('email');
+            'no_hp' => 'The provided credentials do not match our records.',
+        ])->onlyInput('no_hp');
     }
 
     public function register(Request $request)
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'no_hp' => ['required', 'string', 'regex:/^(\+62|0)[0-9]{5,}$/', 'max:20', 'unique:users'],
             'gender' => ['required', 'string', 'in:laki-laki,wanita'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'city' => ['required', 'string', 'min:1'],
@@ -49,7 +49,7 @@ class AuthController extends Controller
 
         $user = User::create([
             'name' => $request->name,
-            'email' => $request->email,
+            'no_hp' => $request->no_hp,
             'gender' => ($request->gender === 'laki-laki' ? true : false),
             'city' => $request->city,
             'password' => Hash::make($request->password),

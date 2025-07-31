@@ -4,11 +4,28 @@ namespace App\Http\Controllers;
 
 use App\Models\Material;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 
 class MaterialController extends Controller
 {
+    private function getMaterialsFromCSV()
+    {
+        $materials = [];
+        $path = base_path('material.csv');
+        if (File::exists($path)) {
+            $file = File::get($path);
+            $rows = explode("\n", $file);
+            foreach ($rows as $row) {
+                $data = str_getcsv($row);
+                if (isset($data[1]) && isset($data[2])) {
+                    $materials[$data[1]] = $data[2];
+                }
+            }
+        }
+        return $materials;
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -17,12 +34,14 @@ class MaterialController extends Controller
         $materials = Material::all();
         return view('pages.material.data_alat', compact('materials'));
     }
+
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        return view('pages.material.tambah_alat');
+        $materialNames = $this->getMaterialsFromCSV();
+        return view('pages.material.tambah_alat', compact('materialNames'));
     }
 
     public function timestamp()
@@ -45,11 +64,13 @@ class MaterialController extends Controller
                 'teknisi' => 'required|string|max:255',
                 'status' => 'required|in:IN,OUT',
                 'date' => 'required|date',
-                'keterangan' => 'nullable|string',
                 'evidence.*' => 'nullable|string',
             ]);
 
-            $data = $request->except('evidence');
+            $data = $request->except('evidence', 'keterangan');
+            $materials = $this->getMaterialsFromCSV();
+            $data['keterangan'] = $materials[$request->name] ?? '';
+
             $evidencePaths = [];
 
             if ($request->has('evidence')) {
@@ -65,7 +86,6 @@ class MaterialController extends Controller
 
                         $fileName = 'evidence/' . Str::random(10) . '_' . time() . '.' . $type;
                         $path = public_path('uploads/' . $fileName);
-                        //Storage::disk('public')->put($fileName, $imageData);
 
                         file_put_contents($path, $imageData);
 
@@ -75,8 +95,6 @@ class MaterialController extends Controller
             }
 
             $data['evidence'] = json_encode($evidencePaths);
-            $data['keterangan'] = $request->keterangan ?? '';
-
 
             Material::create($data);
             return redirect()->route('material.index')->with('success', 'Data material berhasil ditambah.');
@@ -84,7 +102,6 @@ class MaterialController extends Controller
             error_log('Error: ' . $e->getMessage());
             return redirect()->back()->with('error', 'Gagal menambahkan data material. Silakan coba lagi.')->withInput();
         }
-
     }
 
     /**
@@ -100,7 +117,8 @@ class MaterialController extends Controller
      */
     public function edit(Material $material)
     {
-        return view('pages.material.edit_alat', compact('material'));
+        $materialNames = $this->getMaterialsFromCSV();
+        return view('pages.material.edit_alat', compact('material', 'materialNames'));
     }
 
     /**
@@ -118,10 +136,13 @@ class MaterialController extends Controller
                 'teknisi' => 'required|string|max:255',
                 'status' => 'required|in:IN,OUT',
                 'date' => 'required|date',
-                'keterangan' => 'nullable|string',
             ]);
 
-            $material->update($request->all());
+            $data = $request->except('keterangan');
+            $materials = $this->getMaterialsFromCSV();
+            $data['keterangan'] = $materials[$request->name] ?? '';
+
+            $material->update($data);
             return redirect()->route('material.index')->with('success', 'Data material berhasil diperbarui.');
         } catch (\Exception $e) {
             error_log('Error: ' . $e->getMessage());
@@ -146,7 +167,6 @@ class MaterialController extends Controller
                     }
                 }
             }
-
 
             $material->delete();
             return redirect()->route('material.index')->with('success', 'Data material berhasil dihapus.');

@@ -92,8 +92,12 @@
             @csrf
             <div class="mb-3">
                 <label class="form-label">Nama Material</label>
-                <input type="text" class="form-control @error('name') is-invalid @enderror" name="name"
-                    value="{{ old('name') }}" placeholder="Masukan Nama Material">
+                <select class="form-select @error('name') is-invalid @enderror" name="name">
+                    <option value="" disabled selected>Pilih Nama Material</option>
+                    @foreach($materialNames as $name => $description)
+                        <option value="{{ $name }}" {{ old('name') == $name ? 'selected' : '' }}>{{ $name }} - {{ $description }}</option>
+                    @endforeach
+                </select>
                 @error('name')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror

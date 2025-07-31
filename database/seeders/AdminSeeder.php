@@ -17,30 +17,29 @@ class AdminSeeder extends Seeder
     {
         User::create([
             'name' => 'Abduh',
-            'email' => 'budisan@telkom.ac.id',
+            'no_hp' => '081234567890',
             'password' => Hash::make('rahasia'),
-            'role' => 'admin',
             'gender' => 1, // 1 for male
+            'role' => 'admin',
             'city' => 'Madiun',
         ]);
 
         User::create([
             'name' => 'Siti Aminah',
-            'email' => 'sitiam@telkom.ac.id',
+            'no_hp' => '081234567891',
             'password' => Hash::make('secret'),
-            'role' => 'admin',
             'gender' => 0, // 0 for female
+            'role' => 'admin',
             'city' => 'Surabaya',
         ]);
 
         User::create([
             'name' => 'Joko Widodo',
-            'email' => 'jokow@telkom.ac.id',
+            'no_hp' => '081234567892',
             'password' => Hash::make('teknisi'),
-            'role' => 'technician',
             'gender' => 1, // 1 for male
+            'role' => 'technician',
             'city' => 'Solo',
         ]);
     }
 }
-

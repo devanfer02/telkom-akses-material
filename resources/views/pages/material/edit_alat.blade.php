@@ -150,8 +150,12 @@
             @method('PUT')
             <div class="mb-3">
                 <label class="form-label">Nama Material</label>
-                <input type="text" class="form-control @error('name') is-invalid @enderror" name="name"
-                    value="{{ old('name', $material->name) }}">
+                <select class="form-select @error('name') is-invalid @enderror" name="name">
+                    <option value="" disabled>Pilih Nama Material</option>
+                    @foreach($materialNames as $name)
+                        <option value="{{ $name }}" {{ old('name', $material->name) == $name ? 'selected' : '' }}>{{ $name }}</option>
+                    @endforeach
+                </select>
                 @error('name')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror

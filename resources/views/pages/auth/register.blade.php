@@ -32,8 +32,8 @@
         @error('name')
             <span style="color: red;">{{ $message }}</span>
         @enderror
-        <input type="email" name="email" placeholder="Email Telkom" required value="{{ old('email') }}" />
-        @error('email')
+        <input type="text" name="no_hp" placeholder="No. HP" required value="{{ old('no_hp') }}" />
+        @error('no_hp')
             <span style="color: red;">{{ $message }}</span>
         @enderror
         <div class="password-container">

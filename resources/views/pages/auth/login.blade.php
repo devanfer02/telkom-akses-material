@@ -12,7 +12,7 @@
       <h3>Login</h3>
       <form method="POST" action="{{ route('action.login') }}" id="loginForm">
         @csrf
-        <input type="email" name="email" id="email" placeholder="Email" required>
+        <input type="text" name="no_hp" id="no_hp" placeholder="No. HP" required>
         <input type="password" name="password" id="password" placeholder="Password" required>
         <button type="submit">Login</button>
 
